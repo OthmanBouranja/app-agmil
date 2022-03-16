@@ -1,0 +1,17 @@
+version: '2'
+
+services:
+
+  wms_demo:
+    container_name: wms_demo
+    build: web/.
+    volumes:
+      - ../:/opt/hosting/run/wms/current
+    ports:
+      - "2105:80"
+    restart: always
+
+networks:
+  default:
+    external:
+      name: digiform_host
